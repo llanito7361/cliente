@@ -1,0 +1,68 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 10px auto;
+    color: white;
+  }
+  form .title{
+    color: white;
+  }
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  div .releaseData{
+    display: flex;
+    flex-direction: column ;
+    gap: 20px
+  }
+  div .releaseData input{
+    padding: 10px 0;
+  }
+  .inputt {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    outline: none;
+    margin-top: 20px
+  }
+  
+  span {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 25px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (max-width: 600px){
+    form{
+      margin: 0 auto;
+      /* display: flex; */
+      /* align-items: center; */
+    }
+  }

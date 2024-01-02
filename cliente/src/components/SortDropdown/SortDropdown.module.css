@@ -1,0 +1,28 @@
+/* SortDropdown.module.css */
+
+.main {
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+  label {
+    margin-right: 10px; /* Ajusta según tus necesidades */
+  }
+  
+  select {
+    padding: 5px; /* Ajusta según tus necesidades */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+    
+  @media screen and (max-width: 600px){
+    .main{
+      margin-left: 15px
+      /* display: flex; */
+      /* align-items: center; */
+    }
+  }
+  

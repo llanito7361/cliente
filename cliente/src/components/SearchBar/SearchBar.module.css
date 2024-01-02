@@ -1,0 +1,41 @@
+.searchBar{
+ /* background-color: white;    */
+    border-radius: 2px;
+ display: flex;
+ padding-top: 15px ;
+ padding-left: 15px;
+ background-color: rgb(61, 58, 58);
+ /* width: auto; */
+/* margin: 0 15px; */
+}
+.searchBar .input{
+    border-radius: 16px;
+    background-color: rgb(61, 58, 58);
+    color: white;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box
+    ;
+
+}
+.searchBar .Link{
+    text-decoration: none;
+    background-color: rgb(61, 58, 58);
+
+}
+
+.searchBar .lupa{
+    padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .searchBar .input {
+      width: 50px;
+    }
+  }
+  
+  @media screen and (min-width: 601px) {
+    .searchBar .input {
+      width: auto; /* Restaura el ancho automático para pantallas más grandes */
+    }
+  }

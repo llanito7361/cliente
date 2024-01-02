@@ -1,0 +1,129 @@
+/* Estilos CSS */
+.cajaLink {
+  text-decoration: none;
+  background-color: rgb(61, 58, 58);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.795);
+  z-index: 100;
+  height: 300px;
+  padding:  0 ;
+  /* gap: calc(30%); */
+  /* margin: 40px auto; */
+  margin-bottom: 40px
+}
+
+.cajaLink .cajaImg {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  border-radius: 10px;
+  background-color: rgb(61, 58, 58);
+}
+
+
+.cajaLink .caja_titulo {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.795);
+  background-color: rgb(61, 58, 58);
+}
+
+.cajaLink .cajaUnorderList {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.795);
+  background-color: rgb(61, 58, 58);
+}
+
+.cajaLink .listItem {
+  text-align: center;
+  background-color: rgb(61, 58, 58);
+  overflow: hidden;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1204px) {
+  /* Cinco tarjetas por fila */
+  .cajaLink {
+    width: 19.2%; /* (100% / 5) - 1% para el margen derecho */
+    max-width: 20%; /* Ancho fijo deseado */
+    margin-right: 1%; /* Margen derecho entre tarjetas */
+  }
+
+  /* La última tarjeta en cada fila no tendrá margen derecho */
+  .cajaLink:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  /* Una tarjeta por fila */
+  .cajaLink {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    max-width: none;
+    margin-bottom: 10px;
+    height: 350px;
+  }
+
+  .cajaLink .cajaUnorderList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0px;
+  }
+
+  .cajaLink .cajaUnorderList .listItem {
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .cajaLink .cajaImg{
+    width: 100%;
+    height: 60%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  /* Tres tarjetas por fila */
+  .cajaLink {
+    width: calc(33.33% - 20px);
+    max-width: 200px; /* Ancho fijo deseado */
+    /* margin-right: 20px; */
+  }
+
+  .cajaLink .cajaUnorderList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1203px) {
+  /* Cuatro tarjetas por fila */
+  .cajaLink {
+    width: calc(25% - 20px);
+    max-width: 200px; /* Ancho fijo deseado */
+    margin-right: 20px;
+  }
+
+  .cajaLink .cajaUnorderList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    max-height: 80px;
+  }
+
+  .cajaLink .cajaImg {
+    height: 40%;
+    max-height: 50%;
+  }
+}

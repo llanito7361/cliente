@@ -1,0 +1,84 @@
+.navbar{
+    /* margin: 10px; */
+    border-bottom: 2px solid black;
+    padding: 5px;
+display: flex;
+flex-direction: row;
+align-items: center;
+ justify-content: space-between;
+ position: relative;
+
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+background-color: rgb(61, 58, 58);
+height: 50px;
+
+}
+
+.casita, .crear{
+  display: none;
+}
+
+
+.button {
+    /* top: 20px;  */
+    /* left: 20px; Ajustar según la posición horizontal deseada */
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    padding: 4px 10px;
+    border-radius: 16px;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;
+height: 40px;
+  }
+  
+  .button:hover {
+  
+    background-color: skyblue;
+    border-color: #e74c3c;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button::before {
+    content: '';
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-image-slice: 1;
+    transition: transform 0.5s;
+  }
+  
+  .button:hover::before {
+    transform: rotate(360deg);
+  }
+  
+  .button:active {
+    transform: scale(0.95) translateX(2px);
+  }
+  @media screen and (max-width: 900px){
+    .navbar{
+      /* background-color: pink; */
+      display: flex;
+      justify-content: space-around;
+      padding: 5px;
+
+    }
+    
+    .button{
+      font-size: 0;
+    }
+    .casita, .crear{
+      display: flex;
+      /* margin: 0 auto; */
+      padding-bottom: 10px;
+    }
+  }

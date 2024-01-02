@@ -4,7 +4,7 @@ import axios from 'axios';
 const getGenres = () => {
     return async function (dispatch) {
        try {
-        let result = (await axios.get('http://localhost:3001/genres')).data
+        let result = (await axios.get('/genres')).data
         dispatch( {
             type: GET_GENRES,
             payload: result

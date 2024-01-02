@@ -4,7 +4,7 @@ import { GET_PLATAFORMS } from '.'
 const getPlatforms =  () =>{
     return async function(dispatch){
         try {
-            let result =( await axios.get('http://localhost:3001/platforms')).data
+            let result =( await axios.get('/platforms')).data
         dispatch({
             type: GET_PLATAFORMS,
             payload: result

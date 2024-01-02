@@ -4,7 +4,7 @@ import { GET_VIDEOGAMES } from './index.js'
 const getGames = () =>{
     return async function (dispatch) {
         try {
-            let result = ( await axios.get('http://localhost:3001/videogames')).data
+            let result = ( await axios.get('/videogames')).data
             // console.log(result)
         dispatch({
                 type: GET_VIDEOGAMES,

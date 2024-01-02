@@ -1,10 +1,11 @@
+import { Landing,Home, Detail, Create} from './views/index';
 import './App.css';
 import {Route,useLocation} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
 import SearchedGames from './components/SearchedVideogames/SearchedGames';
 // import Detail from './components/Detail/Detail';
-
-import { Landing,Home, Detail, Create} from './views/index';
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 function App() {
   const location = useLocation()

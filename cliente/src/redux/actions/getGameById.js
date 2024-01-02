@@ -4,7 +4,7 @@ const getGameById = (id) => {
   return async function (dispatch) {
     // const idd = parseInt(id)
     try {
-      const response = await axios.get(`http://localhost:3001/videogames/${id}`)
+      const response = await axios.get(`/videogames/${id}`)
         const gameData = await response.data
       dispatch({
         type: GET_VGAME_BY_ID,

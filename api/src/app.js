@@ -15,14 +15,16 @@ server.use(morgan('dev'));
 
 // Configuración de CORS usando cors middleware
 server.use(cors({
-  origin: ['http://localhost:3000', 'https://deploy-pgstcmwbj-llanito7361.vercel.app/'],
+  origin: [
+    // 'http://localhost:3000',
+   'https://deploy-pgstcmwbj-llanito7361.vercel.app/'],
   credentials: true,
 }));
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 
-  'http://localhost:3000',
-  // 'https://deploy-ebon-psi.vercel.app',
+  // 'http://localhost:3000',
+  'https://deploy-ebon-psi.vercel.app',
   
   );
   res.header('Access-Control-Allow-Credentials', 'true');

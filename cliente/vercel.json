@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/videogames", "destination": "https://deploy-production-8255.up.railway.app/videogames" }
+    ]
+  }
+  

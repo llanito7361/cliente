@@ -84,7 +84,7 @@ const Create = () => {
     } else {
       try {
         // Hacer la llamada a axios y asignar el resultado a 'response'
-        const response = await axios.post('/videogames', {
+        const response = await axios.post('https://deploy-production-8255.up.railway.app/videogames', {
           name: games.name,
           releaseDate: games.releaseDate,
           rating: games.rating,

@@ -84,7 +84,7 @@ const Create = () => {
     } else {
       try {
         // Hacer la llamada a axios y asignar el resultado a 'response'
-        const response = await axios.post('/videogames',{ withCredentials: true } , {
+        const response = await axios.post('/videogames', {
           name: games.name,
           releaseDate: games.releaseDate,
           rating: games.rating,

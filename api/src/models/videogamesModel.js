@@ -3,7 +3,10 @@ const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs')
 
-module.exports = (sequelize) => sequelize.define('Videogame', {
+module.exports = (sequelize) => {
+  sequelize.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";');
+
+  return sequelize.define('Videogame', {
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
@@ -55,3 +58,4 @@ module.exports = (sequelize) => sequelize.define('Videogame', {
 },
   { timestamps: false }
 );
+}

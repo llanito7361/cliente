@@ -1,7 +1,6 @@
 const { Sequelize } = require("sequelize");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, API_KEY} = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT, API_KEY, DATABASE_URL} = process.env;
 // const API_KEY = '24f204b80e524536a5f21e21b289e559' la primera solucion al apikey, la mas primitiva onga onga uh uh 
-console.log(API_KEY)
 const videogamesModel = require("./models/videogamesModel");
 const genresModel = require("./models/genresModel");
 const  platformsModel = require('./models/platformModel') // no voy a generar la tabla platforms
@@ -9,11 +8,13 @@ const path = require("path");
 const fs = require("fs");
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,{
+  // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`
+DATABASE_URL
+  ,{
     // dialect: 'postgres', // o tu dialecto correspondiente
-    // dialectOptions: {
-    //   useUTC: false, // para PostgreSQL
-    // },
+    dialectOptions: {
+      connectTimeout: 60000, // Ajusta el tiempo de espera según sea necesario
+    },
     // define: {
       timestamps: false,
     //   freezeTableName: true,
@@ -21,7 +22,7 @@ const sequelize = new Sequelize(
     //   underscoredAll: true,
     // },
     // typeValidation: true, // para validar tipos de datos
-    logging: false,
+    logging: console.log,
   }
 );
 // const basename = path.basename(__filename);

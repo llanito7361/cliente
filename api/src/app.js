@@ -8,23 +8,23 @@ require('./db.js');
 const server = express();
 server.name = 'API';
 
-// Configuración de CORS
-// const corsOptions = {
-//   origin: 'https://pi-videogames-front-silk.vercel.app',
-//   credentials: true,
-//   methods: 'GET, POST, OPTIONS, PUT, DELETE',
-//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
-// };
-
-server.use(cors());
-
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));
-server.use(express.json({ limit: '50mb' })); 
+server.use(express.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 
+// Configuración de CORS usando cors middleware
+server.use(cors({
+  origin: ['http://localhost:3000', 'https://deploy-ebon-psi.vercel.app'],
+  credentials: true,
+}));
+
 server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://deploy-ebon-psi.vercel.app'); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Origin', 
+  'http://localhost:3000',
+  // 'https://deploy-ebon-psi.vercel.app',
+  
+  );
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
@@ -40,7 +40,5 @@ server.use((err, req, res, next) => {
   console.error(err);
   res.status(status).send(message);
 });
-
-
 
 module.exports = server;

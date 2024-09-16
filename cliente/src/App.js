@@ -6,7 +6,7 @@ import SearchedGames from './components/SearchedVideogames/SearchedGames';
 // import Detail from './components/Detail/Detail';
 import axios from 'axios'
 // axios.defaults.baseURL = 'https://deploy-production-8255.up.railway.app/'
-// axios.defaults.baseURL = 'https://deploy-production-8255.up.railway.app/'
+axios.defaults.baseURL = 'http://localhost:4000/'
 
 
 function App() {

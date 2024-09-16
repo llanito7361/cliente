@@ -16,8 +16,8 @@ server.use(morgan('dev'));
 // Configuración de CORS usando cors middleware
 server.use(cors({
   origin: [
-    'https://deploy-pgstcmwbj-llanito7361.vercel.app',
-    'https://deploy-ebon-psi.vercel.app',
+    'http://localhost:4000/',
+    'https://cliente-git-main-llanito7361s-projects.vercel.app/'
   ],
   credentials: true,
 }));

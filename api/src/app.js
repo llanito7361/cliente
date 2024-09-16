@@ -16,7 +16,10 @@ server.use(morgan('dev'));
 // Configuración de CORS usando cors middleware
 server.use(cors({
   origin: ['http://localhost:3000',
-    'https://cliente-eta.vercel.app'], // Permitir solicitudes solo desde tu frontend
+    'https://cliente-eta.vercel.app',
+'https://5063-181-5-239-36.ngrok-free.app'
+  
+  ], // Permitir solicitudes solo desde tu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
   credentials: true // Permitir envío de cookies o autenticación
 }));

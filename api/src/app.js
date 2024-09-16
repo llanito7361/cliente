@@ -15,16 +15,14 @@ server.use(morgan('dev'));
 
 // Configuración de CORS usando cors middleware
 server.use(cors({
-  origin: [
-    'http://localhost:4000/',
-    'https://cliente-git-main-llanito7361s-projects.vercel.app/'
-  ],
-  credentials: true,
+  origin: 'http://localhost:3000', // Permitir solicitudes solo desde tu frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
+  credentials: true // Permitir envío de cookies o autenticación
 }));
 
 server.use('/', router);
 
-// Error catching endware.
+// Manejo de errores
 server.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.message || err;

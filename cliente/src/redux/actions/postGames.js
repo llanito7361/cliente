@@ -3,7 +3,7 @@ import { ADD_VIDEOGAMES } from '.'
 
 let postGames = async (dispatch) => {
     try {
-        let results = (await axios.post('/videogames',{ withCredentials: true })).data
+        let results = (await axios.post('/games',{ withCredentials: true })).data
     dispatch({
         type: ADD_VIDEOGAMES,
         payload: results

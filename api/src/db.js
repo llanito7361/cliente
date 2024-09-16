@@ -22,7 +22,7 @@ DATABASE_URL
     //   underscoredAll: true,
     // },
     // typeValidation: true, // para validar tipos de datos
-    logging: console.log,
+    logging: false,
   }
 );
 // const basename = path.basename(__filename);

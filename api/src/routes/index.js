@@ -5,7 +5,7 @@ const platformsRouter = require('./platformsRouter')
 
 const router = Router()
 
-router.use('/videogames', gamesRouter) //funciona
+router.use('/games', gamesRouter) //funciona
 router.use('/genres', genresRouter) //funciona
 router.use('/platforms',platformsRouter ) //funciona
 module.exports = router

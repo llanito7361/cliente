@@ -39,7 +39,7 @@ const Landing = () => {
 
   return(
         <div className={styles.main}>
-                <Link to={`/videogames?page=1&pageSize=9`}  className={styles.button}>HOME</Link>
+                <Link to={`/games?page=1&pageSize=9`}  className={styles.button}>HOME</Link>
         </div>
     )
 }

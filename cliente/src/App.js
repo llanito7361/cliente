@@ -7,6 +7,7 @@ import SearchedGames from './components/SearchedVideogames/SearchedGames';
 import axios from 'axios'
 // axios.defaults.baseURL = 'https://deploy-production-8255.up.railway.app/'
 axios.defaults.baseURL = 'http://localhost:4000/'
+axios.defaults.withCredentials = true;
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         {location.pathname !== '/' && <Navbar />}
         <Route exact path='/' component={Landing} />
         {/* <Route path='/videogames/:id' component={Detail}/> */}
-        <Route path='/videogames' component={Home}/>
+        <Route path='/games' component={Home}/>
         <Route path='/create' component={Create}/>
         <Route path='/videogamesSearch' component={SearchedGames}/>
         <Route path='/detail/:id' component={Detail}  />

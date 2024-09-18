@@ -1,23 +1,22 @@
 {
-    "version": 2,
     "builds": [
       {
-        "src": "api/index.js",  
-        "use": "@vercel/node"
+        "src": "cliente/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build"
+        }
       },
       {
-        "src": "cliente/package.json", 
-        "use": "@vercel/static-build"
+        "src": "api/package.json",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "api/index.js" },  
-      { "src": "/(.*)", "dest": "/cliente/$1" }  
-    ],
-    "functions": {
-      "api/index.js": {
-        "runtime": "nodejs18.x"  
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/$1"
       }
-    }
+    ]
   }
   

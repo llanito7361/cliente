@@ -17,7 +17,7 @@ server.use(morgan('dev'));
 server.use(cors({
   origin: ['http://localhost:3000',
     'https://cliente-eta.vercel.app',
-'https://5063-181-5-239-36.ngrok-free.app'
+// 'https://5063-181-5-239-36.ngrok-free.app'
   
   ], // Permitir solicitudes solo desde tu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos

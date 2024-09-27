@@ -19,7 +19,7 @@ const handleSortChange = (sortedGames) => {
 
   return (
     <div className={style.navbar}>
-      <Link to="/videogames" className={`${style.button} ${style.botonHome}`}>
+      <Link to="/games" className={`${style.button} ${style.botonHome}`}>
         HOME
         <span role="img" aria-label="home" className={style.casita}>
           🏠

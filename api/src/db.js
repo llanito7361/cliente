@@ -51,11 +51,11 @@ DATABASE_URL
 const videoGamesGenres = sequelize.define("VideoGamesGenres", {});
 const videoGamesPlatforms = sequelize.define("VideoGamesPlatforms", {});// a chingar su madre tmb la tabla  VideoGamesPlatformsq intermedia
 
-Videogame.belongsToMany(Genre, { through: videoGamesGenres });
-Genre.belongsToMany(Videogame, { through: videoGamesGenres });
+Videogame.belongsToMany(Platform, { through: 'VideogamePlatforms' });
+Platform.belongsToMany(Videogame, { through: 'VideogamePlatforms' });
 
-Videogame.belongsToMany(Platform, { through: videoGamesPlatforms });
-Platform.belongsToMany(Videogame, { through: videoGamesPlatforms });
+Videogame.belongsToMany(Genre, { through: 'VideogameGenres' });
+Genre.belongsToMany(Videogame, { through: 'VideogameGenres' });
 
 
 

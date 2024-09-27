@@ -53,12 +53,14 @@ const getGameHandler = async (req, res) => {
 
 const createGameHandler = async (req, res) => {
   console.log('Datos recibidos:', req.body);
-  const { name, releaseDate, rating, platformName, genreName } = req.body;
+  const { name } = req.body;
+
+  if (!name) {
+    return res.status(400).json({ success: false, message: 'El campo "name" es requerido' });
+  }
 
   try {
-
-    
-    const newGame = await createGame(name, releaseDate, rating, platformName, genreName);
+    const newGame = await createGame(name);
     console.log('Juego creado:', newGame);
     res.status(200).json({ success: true, game: newGame });
   } catch (error) {

@@ -89,25 +89,13 @@ if (source === 'api') {
 // ID , nombre, descripcion, plataforma 
 // controllers.js/videogamesControllers
 
-const createGame = async (name, releaseDate, rating, platform, genre) => {
+const createGame = async (name) => {
   try {
-    // Buscar o crear instancias de plataforma y género
-    const [platformInstance] = await Platform.findOrCreate({ where: { name: platform } });
-    const [genreInstance] = await Genre.findOrCreate({ where: { name: genre } });
-
-    // Crear el nuevo juego
+    // Crear el nuevo juego únicamente con el nombre
     const newGame = await Videogame.create({
       name,
-      id: uuidv4(),
-      releaseDate,
-      rating,
-      platforms: [platformInstance], // Asociar la plataforma al juego
-      genres: [genreInstance], // Asociar el género al juego
+      // id: uuidv4(),
     });
-
-    // Asociar las instancias de plataforma y género al juego
-    await newGame.addPlatform(platformInstance);
-    await newGame.addGenre(genreInstance);
 
     return newGame;
   } catch (error) {
@@ -115,6 +103,7 @@ const createGame = async (name, releaseDate, rating, platform, genre) => {
     throw new Error(`Error al crear el juego: ${error.message}`);
   }
 };
+
 
 module.exports = {createGame,
 getAllGames,
